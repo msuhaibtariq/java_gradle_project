@@ -12,7 +12,7 @@ COPY src /app/src
 RUN mvn package -DskipTests
 
 # Step 2: Runtime Stage
-FROM openjdk:11-jre-slim  # Use a lightweight runtime image
+FROM openjdk:11
 
 WORKDIR /app
 
