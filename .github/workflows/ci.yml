@@ -35,4 +35,10 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@
+        uses: docker/setup-buildx-action@3
+      - name: Build and Push
+        uses: docker/build-push-actions@v6
+        with:
+          context: .
+          push: true
+          tags: suhaibt/java_maven_project:v1
